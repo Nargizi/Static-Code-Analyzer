@@ -21,7 +21,7 @@ def is_blank_line(line):
 
 def check_code_line_errors(code_line, num_line):
     check_error(not is_blank_line(code_line) and len(code_line) - len(code_line.rstrip(' ')) < 2,
-                num_line, 'S004', ' Less than two spaces before inline comments')
+                num_line, 'S004', 'Less than two spaces before inline comments')
 
 
 def check_comment_line_errors(comment_line, num_line):
@@ -62,7 +62,7 @@ def analyze_file(file_):
             continue
         else:
             check_error(blank_count > 2,
-                        num_line, 'S006', ' More than two blank lines preceding a code line ')
+                        num_line, 'S006', 'More than two blank lines preceding a code line ')
             blank_count = 0
 
         check_one_line_errors(line, num_line)
